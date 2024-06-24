@@ -1,0 +1,17 @@
+# get_page_title.yaml
+
+default_model:
+  model: ollama/llama3
+flow:
+  get_website:
+    action: my_get_url
+    url:
+      var: url
+  extract_title:
+    action: prompt
+    prompt:
+      - heading: Website content
+        link: get_website.result
+      - text: |
+          What is the title of the webpage?
+default_output: extract_title.result

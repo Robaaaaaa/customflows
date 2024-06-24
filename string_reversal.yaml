@@ -1,0 +1,16 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/asynchronous-flows/asyncflows/main/schemas/asyncflows_schema.json
+# Assuming the latest schema URL is retrieved and updated
+$schema: https://<latest_asyncflows_schema_url>
+
+default_model:
+  model: ollama/llama3
+  max_output_tokens: 50
+
+flow:
+  reverse_string:
+    action: prompt  # Keep the action as prompt
+    prompt: "{{ my_input }}"  # Only the string to be reversed
+    input_string:
+      var: my_input
+
+default_output: reverse_string.reversed_string

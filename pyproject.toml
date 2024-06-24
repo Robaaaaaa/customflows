@@ -1,0 +1,27 @@
+# This is the pyproject.toml file, which is used by poetry to manage your project.
+# Some basic information about the project:
+[tool.poetry]
+name = "api-call-example"
+version = "0.1.0"
+description = ""
+authors = ["Rafael Irgolic <hello@irgolic.com>"]
+readme = "README.md"
+
+
+# Specify dependencies of the project here:
+[tool.poetry.dependencies]
+python = "^3.10"
+
+# This is poetry boilerplate, don't worry about it:
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+###
+### The following specifies the entrypoint for where your actions are located
+###
+# If you correctly provide your actions' package name here,
+# they will be automatically loaded by asyncflows,
+# and be recognized by the language server for autocompletion.
+[tool.poetry.plugins."asyncflows"]
+actions = "api_call_example.my_actions"
